@@ -1,18 +1,20 @@
-<div id='login-form' class='row m-0 w-100'>
-    <div class='col-md-4 offset-4 mt-5' *ngIf='!this.isLogin'>
-        <h4>Login</h4>
-        <form #myform="ngForm" (submit)="onSubmit(myform)">
-            <div class='form-group'><input class='form-control' type="text" name="email" placeholder="Email"
-                    ngModel></div><br>
-            <div class='form-group'><input class='form-control' type="password" name="senha" placeholder="Password"
-                    ngModel></div><br>
-                    <div #myDiv class='col-md-12 text-center' >
-                        <input class='btn btn-primary' type="submit" value="Acessar">
-                    </div>
-        </form>
-    </div>
+<div class='container ml-5'>
+    <div id='login-form' class='d-flex justify-content-center mt-5'>
+        <div *ngIf='!this.isLogin'>
+            <h4>Login</h4>
+            <form #myform="ngForm" (submit)="onSubmit(myform)">
+                <div class='form-group'><input class='form-control' type="text" name="email" placeholder="Email"
+                        ngModel></div><br>
+                <div class='form-group'><input class='form-control' type="password" name="senha" placeholder="Password"
+                        ngModel></div><br>
+                        <div #myDiv class='col-md-12 text-center' >
+                            <input class='btn btn-primary' type="submit" value="Acessar">
+                        </div>
+            </form>
 
-    <div class="alert alert-danger col-md-4 offset-4 mt-5" id='login-error' role="alert">
-        Login inválido!
+            <div class="alert alert-danger mt-5" id='login-error' role="alert">
+                Login inválido!
+            </div>
+        </div>       
     </div>
 </div>
