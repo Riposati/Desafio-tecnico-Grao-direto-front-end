@@ -1,0 +1,33 @@
+<div class="container border mt-5 mb-3" style="max-width: 800px;">
+  
+    <h2 class='text-center'>Detalhes restaurante</h2>
+
+    <div *ngIf="isLogin===true">
+
+        <span *ngIf="myObj!==undefined">
+            
+            <h3>{{myObj.nome}}</h3> <br>
+            {{myObj.descricao}} <br>
+            {{myObj.telefone}} <br>
+            {{myObj.endereco}} <br>
+
+            <h4>Cardápio:</h4>
+
+            <div class="card mb-1" *ngFor="let prato of myObj.pratos">
+                <div class="card-body">
+                  <h3>Nome do prato:</h3>
+                      <span>{{prato.nome}}</span>
+                  <h3>Descrição:</h3>
+                      <span>{{prato.descricao}}</span>
+                  <h3>Preço</h3>
+                      <span>R${{prato.preco}}</span>
+                </div>
+            </div>
+
+            <div *ngIf='myObj.pratos === undefined'>Sem Cardápio informado!</div>
+
+        </span> 
+
+    </div>
+
+</div>
